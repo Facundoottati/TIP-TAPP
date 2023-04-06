@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tip-Tapp</title>
+  <style>
+    /* Set background color to black */
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Center align the title */
+    .title {
+      text-align: center;
+      margin-top: 20vh;
+    }
+
+    /* Set text color to white and use Impact font */
+    .title h1 {
+      color: white;
+      font-family: Impact, Charcoal, sans-serif;
+      text-transform: uppercase;
+    }
+
+    /* Center align the QR code */
+    .qr-code {
+      text-align: center;
+      margin-top: 20vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- Title Section -->
+  <div class="title">
+    <h1>Tip-Tapp</h1>
+  </div>
+
+  <!-- QR Code Section -->
+  <div class="qr-code">
+    <img id="qrCodeImage" src="" alt="QR Code">
+  </div>
+
+  <!-- Add qrcode-generator Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.1/qrcode.min.js"></script>
+
+  <script>
+    // Generate Random QR Code Data
+    var qrCodeData = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
+    // Create QR Code Image
+    var qrCode = new QRCode(document.getElementById("qrCodeImage"), {
+      text: qrCodeData,
+      width: 256,
+      height: 256,
+      colorDark: "#FFFFFF",
+      colorLight: "#000000",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>
