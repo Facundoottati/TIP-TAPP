@@ -14,24 +14,11 @@
             font-family: Impact, sans-serif;
         }
     </style>
-    <!-- Include the qrious library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 </head>
 <body>
     <h1>Tip-Tapp</h1>
-    <!-- Element where the QR code will be displayed -->
-    <canvas id="qrcode"></canvas>
+    <!-- Element where the QR code image will be displayed -->
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://google.com" alt="QR Code" />
 
-    <script>
-        // JavaScript code for generating the QR code
-        var qr = new QRious({
-            element: document.getElementById("qrcode"),
-            value: "https://google.com", // URL to redirect to
-            size: 256,
-            level: "H",
-            background: "black",
-            foreground: "white"
-        });
-    </script>
 </body>
 </html>
